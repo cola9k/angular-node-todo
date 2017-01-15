@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title><%=title%></title>
+
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/app.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Dongseo Univ.kr</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 sidebar">
+          <div class="list-group">
+            <a href="#!/inbox" class="list-group-item active">
+              <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> Inbox <span class="badge">4</span>
+            </a>
+            <a href="#!/today" class="list-group-item">
+              <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Today
+            </a>
+          </div>
+
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#project" aria-controls="project" role="tab" data-toggle="tab">project</a></li>
+            <li role="presentation"><a href="#filter" aria-controls="filter" role="tab" data-toggle="tab">Filters</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="project">
+                <ul class="list-unstyled tab-list">
+                    <li><i class="glyphicon glyphicon-chevron-right"></i><a href="">person</a></li>
+                    <li><i class="glyphicon glyphicon-chevron-right"></i><a href="">work</a></li>
+                    <li><i class="glyphicon glyphicon-chevron-right"></i><a href="">shopping</a></li>
+                </ul>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="filter">
+                <ul class="list-unstyled tab-list">
+                    <li><a href="">tomorrow</a></li>
+                    <li><a href="">all</a></li>
+                </ul>
+            </div>
+          </div>
+
+          <!--<button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+          </button>-->
+        </div><!-- /.blog-sidebar -->
+
+        <div class="col-sm-8 main">
+            <ng-view></ng-view>
+        </div><!-- /.blog-main -->
+
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="bower_components/angular/angular.min.js"></script>
+      <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+      <script src="js/app.module.js"></script>
+      <script src="js/app.config.js"></script>
+      <script src="js/todo/todo.controller.js"></script>
+      <script src="js/services/todo.service.js"></script>
+  </body>
+</html>
